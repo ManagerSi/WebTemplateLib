@@ -1,0 +1,1221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B408B8FB-7B38-40B6-B4C1-023BF6C15625}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebTemplateLib</RootNamespace>
+    <AssemblyName>WebTemplateLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommonContent\Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="CommonContent\Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="CommonContent\Scripts\bootstrap.js" />
+    <Content Include="CommonContent\Scripts\bootstrap.min.js" />
+    <None Include="CommonContent\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="CommonContent\Scripts\jquery-1.10.2.js" />
+    <Content Include="CommonContent\Scripts\jquery-1.10.2.min.js" />
+    <None Include="CommonContent\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="CommonContent\Scripts\jquery.validate.js" />
+    <Content Include="CommonContent\Scripts\jquery.validate.min.js" />
+    <Content Include="CommonContent\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="CommonContent\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="CommonContent\Scripts\modernizr-2.6.2.js" />
+    <Content Include="CommonContent\Scripts\respond.js" />
+    <Content Include="CommonContent\Scripts\respond.min.js" />
+    <None Include="CommonContent\Scripts\_references.js" />
+    <Content Include="CommonContent\Styles\bootstrap.css" />
+    <Content Include="CommonContent\Styles\bootstrap.min.css" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\404.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\artists.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\blog.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\contact.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\css\style.css" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\details.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\blog1.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\blog2.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\blog3.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\det-pic.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\fb.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\feed.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\1.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\10.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\11.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\12.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\2.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\3.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\4.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\5.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\6.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\7.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\8.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\full\9.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\gplus.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\logo.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic1.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic2.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic3.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic4.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic5.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic6.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\pic7.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\plus.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\1.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\10.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\11.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\12.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\2.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\3.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\4.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\5.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\6.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\7.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\8.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\thumbs\9.jpg" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\twitter.png" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\index.html" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\说明.txt" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\.gitattributes" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\about-me.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\blog.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\contact.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\animate.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\bootstrap.min.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\font-awesome.min.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\magnific-popup.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\owl.carousel.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\css\themify-icons.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\elements.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\fontawesome-webfont.svg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\themify.svg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\about.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\about2.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\about3.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\blog.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\contact.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\elements.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p1.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p2.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p3.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p4.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p5.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p6.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\p7.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\portfolio.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\services.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\slide1.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\slide2.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\slide3.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\slide4.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\bg-img\tes.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\1.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\2.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\3.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\lp1.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\lp2.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\lp3.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\blog-img\lp4.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\browsing.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\camera.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\canvas.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\coffee.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\develop.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\dots.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\favicon.ico" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\golden-ratio.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\mouse.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\pantone.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\vector.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\core-img\video-player.png" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\1.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\10.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\11.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\12.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\2.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\3.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\4.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\5.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\6.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\7.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\8.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\img\portfolio-img\9.jpg" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\index.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\active.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\bootstrap.min.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\map-active.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\plugins.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\js\popper.min.js" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\portfolio.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\services.html" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\style.css" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\说明.txt" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\404.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\blog-single.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\blog.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\animate-text.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\animate.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\bootstrap-theme.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\bootstrap.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color1.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color2.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color3.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color4.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color5.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color6.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color7.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color8.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\color\color9.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\font-awesome.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\magnific-popup.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\normalize.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\owl.carousel.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\owl.theme.default.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\responsive.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\slicknav.min.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\css\style.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\fontawesome-webfont.svg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\blog1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\blog2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\blog3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\breadgramb_bg.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client5.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\client6.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\Computer.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\error-img.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\fun-bg.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\header-logo1.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\logo.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf5.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\pf6.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\ruby.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\single-b1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\single-pf1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\single-pf2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\single-pf3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\success.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\team1.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\team2.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\team3.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\testi-1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\testi-2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\testi-3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\testi-bg.jpg" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\img\tic.png" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\index.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\animate-text.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\bootstrap.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\colors.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\gmaps.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\isotope.pkgd.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.counterup.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.magnific-popup.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.nav.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.scrollUp.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.slicknav.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\jquery.stellar.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\main.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\owl.carousel.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\particle-code.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\particles.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\js\wow.min.js" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\mail-success.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\portfolio-single.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\portfolio.html" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\style.css" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\说明.txt" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\fontawesome-webfont.eot" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\fontawesome-webfont.woff" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\FontAwesome.otf" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\css\bootstrap.css.map" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\fontawesome-webfont.eot" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\fontawesome-webfont.woff" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\FontAwesome.otf" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\contact.php" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap-theme.css.map" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap-theme.min.css.map" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap.css.map" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap.min.css.map" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\Flaticon.eot" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\Flaticon.ttf" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\Flaticon.woff" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\fontawesome-webfont.eot" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\fontawesome-webfont.woff" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\FontAwesome.otf" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\_flaticon.scss" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\css.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\extend.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\faq.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\html.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\js.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\misc.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\TOC.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\doc\usage.md" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\fontawesome-webfont.eot" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\fontawesome-webfont.woff" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\FontAwesome.otf" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="HTML\门户网站模版\twts_114_ruby\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="CommonContent\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\fonts\Amble-Light-webfont.ttf" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\images\logo.psd" />
+    <Content Include="HTML\相册网站模版\cpts_1181_cgw\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\3000套网站模板免费拥有.url" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\fontawesome-webfont.eot" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\fontawesome-webfont.woff" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\FontAwesome.otf" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\themify.eot" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\themify.ttf" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\fonts\themify.woff" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\scss\style.scss" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\scss\_mixin.scss" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\scss\_responsive.scss" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\scss\_theme_color.scss" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\scss\_variables.scss" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\style.css.map" />
+    <Content Include="HTML\相册网站模版\twts_64_sonar\找网站模板就上【模板之家】cssMoban.com.url" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HTML\后台管理模版\cpts_161_bet\403.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\404.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\charts.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\colorbox.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\colorpicker.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\fullcalendar.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\jquery.cleditor.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\normalize.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\style.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\CSS\tipsy.css" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\forms.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Avatar\avatar1.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Avatar\avatar2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Avatar\avatar3.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\border.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\controls.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderBottomCenter.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderBottomLeft.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderBottomRight.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderMiddleLeft.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderMiddleRight.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderTopCenter.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderTopLeft.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\ie6\borderTopRight.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\loading.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\loading_background.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorBox\overlay.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\blank.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_background.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_hex.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_hsb_b.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_hsb_h.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_hsb_s.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_indic.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_overlay.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_rgb_b.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_rgb_g.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_rgb_r.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_select.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\colorpicker_submit.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_background.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_hex.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_hsb_b.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_hsb_h.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_hsb_s.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_indic.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_rgb_b.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_rgb_g.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_rgb_r.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\custom_submit.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\select.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\select2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\ColorPicker\slider.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_add.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_bars.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_bottom_arrow.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_calendar.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_charts.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_chats.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_checked.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_cHorizontal.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_close.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_dashboard.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_data.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_down.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_downT.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_files.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_forms.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_help.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_icons.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_login.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_logout.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_message.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_notes.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_options.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_pacman.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_pages.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_pie.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_profile.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_progress.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_radio.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_resize.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_selector.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_settings.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_settings_small.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_sorting.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_sorting_asc.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_sorting_desc.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_spinner.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_table.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_tables.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_tabs.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_tasks.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_tooltip.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_ui.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_up.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_valid.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\16\i_16_wysiwyg.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\18\i_18_search.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_charts.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_dashboard.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_forms.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_inbox.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_pages.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_search.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_settings.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_tables.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_ui.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\22\i_22_upload.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_charts.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_dashboard.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_delivery.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_dollar.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_forms.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_inbox.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_statistic.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_support.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_tables.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\32\i_32_ui.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-1.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-10.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-11.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-12.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-13.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-14.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-2.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-3.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-4.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-5.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-6.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-7.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-8.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Load\load-9.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\adidas_shirt.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\analysis_analytics.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\barcode_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\battery_emtpy_0_percent.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\beer_glass.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\books_multiple.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\chair_furniture.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\chat_talk_speak.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\clock_alarm.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\clock_time_watch.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\cloudy_rain_sun.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\cloud_upload_arrow.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\coda_leaf_nature.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\contact_card_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\cover_flow.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\date_calendar.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\directions_sign.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\download_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\e.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\email_envelope.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\excel_spreasheet_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\expand_left.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\file.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\film_movie_clip.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\film_movie_clip_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\film_record.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\finish_line.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\folder_locked.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\folder_music.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\foot_steps_feet.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\hd_high_definition_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\house_home_building.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\image_landscape.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\inbox_4.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\inbox_outbox.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\ipod_classic.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\key_password.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\lemonade_stand_shop.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\light_buld_idea.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\like_thumbs_up.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\link_seo.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\money_coins_cash.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\paper_camera_file.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\paypal_2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\photography_camera.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\plane.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\power_chord.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\price_money_tag.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\screen_monitor_computer.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\shopping_cart.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\shopping_cart_webshop.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Icons\Preview\speak_yell_blog_advertising.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\kanrisha_logo.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\LightBox\preview.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\LightBox\preview_big.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Pages\403.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Pages\404.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern1.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern3.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern4.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern5.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Patterns\pattern6.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\buttons.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\drop_menu.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\orders_stats.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern1.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern2.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern3.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern4.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern5.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\pattern6.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\separator_circle.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\separator_line.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\separator_long.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\separator_menu.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\separator_short.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\small_count.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\tickets_stats.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\toolbar.gif" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\top_panel.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\top_search_input.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\top_search_submit.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\top_tooltip.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\top_tooltip_arrow.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\users_stats.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\visitor_stats.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\Textures\wHead.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Images\user_avatar.png" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\inbox.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\index.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\ClEditor\jquery.cleditor.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\ColorBox\jquery.colorbox.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\ColorPicker\colorpicker.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\ColResizable\colResizable-1.3.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\DataTables\jquery.dataTables.min.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Elastic\jquery.elastic.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Flot\excanvas.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Flot\jquery.flot.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Flot\jquery.flot.pie.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Flot\jquery.flot.resize.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\FullCalendar\fullcalendar.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\jQueryUI\jquery-ui-1.8.21.min.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\jQuery\jquery-1.7.2.min.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\kanrisha.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\MaskedInput\jquery.maskedinput-1.3.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\SuperTextarea\jquery.supertextarea.min.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Tipsy\jquery.tipsy.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\UISpinner\ui.spinner.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Javascript\Uniform\jquery.uniform.js" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\Login.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\tables.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\ui.html" />
+    <Content Include="HTML\后台管理模版\cpts_161_bet\说明.txt" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\about.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\contact.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\css\animate.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\css\bootstrap.css" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\css\chocolat.css" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\css\style.css" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\gallery.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\a1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\banner.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\close.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\email.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g5.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g6.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g7.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g8.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\g9.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\graduation.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\h2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\img-sprite.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\left.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\location.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\phone.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\pin.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\quot1.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\quot2.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\right.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\social.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\t1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\t2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\t3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\t4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\telephone.png" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\w2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\w3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\w5.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\images\w6.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\index.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\js\bootstrap.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\js\jquery-1.11.0.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\js\jquery.chocolat.js" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\js\wow.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\services.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\shortcodes.html" />
+    <Content Include="HTML\门户网站模版\cpts_1302_byj\说明.txt" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\css\animate.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\css\magnific-popup.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\css\masonry.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\css\odometer-theme-default.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\css\pushy.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\bootstrap-scrollspy.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\holder.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\holder.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\ie-emulation-modes-warning.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\jquery.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\masonry.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\masonry.pkgd.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\odometer.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\pushy.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\scripts.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\assets\js\wow.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\css\bootstrap.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\css\bootstrap.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\css\theme.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\js\bootstrap.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\js\bootstrap.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\bootstrap\js\npm.js" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\css\bootstrap.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\css\font-awesome.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\css\typicons.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\fontawesome-webfont.svg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\5.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\6.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\7.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\8.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\bj.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\bj2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\bj3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\bj4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-01.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-02.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-03.png" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-04.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-05.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-06.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\logo-sample-06.png" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\images\your_logo.png" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\index.html" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\style.css" />
+    <Content Include="HTML\门户网站模版\cpts_1305_bzk\说明.txt" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\404.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\about-author.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\about.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\audio-post.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\audio.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\contact.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\animate.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\bootstrap.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\featherlight.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\font-awesome.min.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\main.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\normalize.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\owl.carousel.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\owl.theme.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\css\responsive.css" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\fonts\fontawesome-webfont.svg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\homepage2.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\a-post1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\a-post2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\about-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\about.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\add.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\add1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\audio-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\author-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\author-main.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\author1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\author2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\author3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\bike.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\bike1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\business1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\business2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\c1.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\c2.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\c3.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\c4.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\cars.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\cars1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\cars2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\city.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\comment1.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\comment2.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\comment3.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\contact-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\dance.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent5.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent6.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\ent7.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\f-n1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\f-n2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\f-n3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\f-n4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\f-news1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\fade-up.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\favicon.ico" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h2-1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h2-2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h2-3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\h3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\la1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\la2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\la3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\la4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\la5.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\logo-f.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\logo.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\mn1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\mnb1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\new-thumb1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\new-thumb2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\new-thumb3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\new-thumb4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\next.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\political.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\political1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pp1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pp2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pp3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pp4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\prev.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pv1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pv2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\pv3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\reader1.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\reader2.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\reader3.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\rp1.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\rp2.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\rp3.png" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\s-post-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\s-post1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\s-post2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\s-post3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\s1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\sports.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\sports1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\sports2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\sports3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\step2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\sub.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\tec.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\tec1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\tec2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\tec3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\trend1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\trend2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\trend3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\trending-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\v-post1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\v-post2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\v-s1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\v1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\video-bg.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\vt1.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\vt2.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\vt3.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\vt4.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\img\writer.jpg" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\index.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\bootstrap.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\featherlight.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\froogaloop2.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\jquery-1.11.3.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\jquery.vimeo.api.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\main.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\modernizr-2.8.3.min.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\owl.carousel.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\js\wow.js" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\standard-post.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\video-post.html" />
+    <Content Include="HTML\门户网站模版\cpts_1308_cal\说明.txt" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\animate.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap-theme.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap-theme.min.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\bootstrap.min.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\colors.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\custom.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\flaticon.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\font-awesome.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\font-awesome.min.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\owl.carousel.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\prettyPhoto.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\responsive.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\css\versions.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\flaticon.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\flaticon.html" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\Flaticon.svg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\fontawesome-webfont.svg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\about_03.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\ajax-loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\apple-touch-icon.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\banner2.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\bg-testimonial.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\bg.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\bg1.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\clinic_01.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\clinic_02.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\clinic_03.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\clinic_04.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\clinic_05.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\doctor_01.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\doctor_02.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\doctor_03.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\fevicon.ico.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\footer-logo.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\girl-with-lap.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\icon-logo.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\icon-service.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\icons.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\inner-side-banner.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\loaders\heart-loading2.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\logo-politic.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\logo.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\phone-icon.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\phonebg.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\contentPattern.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_rounded\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\contentPattern.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\dark_square\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\default_thumb.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\sprite_next.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\sprite_prev.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\sprite_x.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\default\sprite_y.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\contentPatternBottom.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\contentPatternLeft.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\contentPatternRight.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\contentPatternTop.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\facebook\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_rounded\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_rounded\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_rounded\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_rounded\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_square\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_square\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_square\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_square\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\prettyphoto\light_square\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\price-bg.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-bg.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon1.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon2.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon3.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon4.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon5.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\service-icon6.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\slider-bg.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\testi_01.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\testi_02.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\images\testi_03.png" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\index.html" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\all.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\animate.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\custom.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\hoverdir.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\jquery.prettyPhoto.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\jquery.vide.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\map.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\modernizer.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\owl.carousel.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\portfolio.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\retina.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\js\scroll.js" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\preview\pre.jpg" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\style.css" />
+    <Content Include="HTML\门户网站模版\twts_108_lifecare\说明.txt" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\blog_overview.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\blog_single.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\contact.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\css\base.css" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\css\ie7.css" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\css\screen.css" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\css\skeleton.css" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\apple-touch-icon-114x114.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\apple-touch-icon-72x72.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\apple-touch-icon.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner1_wide.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner2_wide.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner3_wide.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\banner\banner4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\bg.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\bg2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\bg3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\bg4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\blogpost1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\blogpost_slide1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\blogpost_slide2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\blogpost_slide3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\blogpost_slide4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_amsterdam.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teasefrankfurt.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teaser3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teasercanberra.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teasernurem.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teaserplane.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\folio_teasertowns.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide28.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide29.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide30.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide5.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\blog\portfolio_slide6.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\favicon.ico" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\lightboxexample_large.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\lightboxexample_thumb.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\logo.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\mobile.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_facebook.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_googleplus.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_rss.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_twitter.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_vimeo.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\social\social_youtube.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\from_blog1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\from_blog2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\gravatar.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser10.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser5.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser6.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser7.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser8.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\home_teaser9.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_blog1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_blog2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_blog3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_blog4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio1.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio2.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio3.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio4.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio5.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\thumbs\pop_folio6.jpg" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\arrow_left.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\arrow_right.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\attention.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\background_tile1.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\button_bubble.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\button_doc.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\button_plus.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\headlinefront_footer.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\headlinefront_sidebar.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\navselect.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\preloader.gif" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\submenu_plus.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\images\tiles\submenu_transparency.png" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\index.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\index_alternative.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\ddsmoothmenu.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery-1.7.min.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.animate-colors-min.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.cssAnimate.mini.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.easing.1.3.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.fitvids.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.flexslider-min.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\jquery.prettyPhoto.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\js\screen.js" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\page_full.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\page_sidebar_left.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\page_sidebar_right.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\portfolio_1column.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\portfolio_2column.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\portfolio_4column.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\portfolio_single.html" />
+    <Content Include="HTML\门户网站模版\twts_110_punch_apex\说明.txt" />
+    <Content Include="IndexPage.html" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommonContent\Images\" />
+    <Folder Include="HTML\博客网站模版\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>46262</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46262/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

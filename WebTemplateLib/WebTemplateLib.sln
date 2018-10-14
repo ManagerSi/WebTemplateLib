@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTemplateLib", "WebTemplateLib\WebTemplateLib.csproj", "{B408B8FB-7B38-40B6-B4C1-023BF6C15625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cpts_161_bet", "cpts_161_bet\cpts_161_bet.csproj", "{B219D044-7B63-4461-97BD-C041A7329F00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cpts_161_bet.Tests", "cpts_161_bet.Tests\cpts_161_bet.Tests.csproj", "{DAC25F62-5663-47E8-87A9-17DFCF10FB66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B408B8FB-7B38-40B6-B4C1-023BF6C15625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B408B8FB-7B38-40B6-B4C1-023BF6C15625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B408B8FB-7B38-40B6-B4C1-023BF6C15625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B408B8FB-7B38-40B6-B4C1-023BF6C15625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B219D044-7B63-4461-97BD-C041A7329F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B219D044-7B63-4461-97BD-C041A7329F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B219D044-7B63-4461-97BD-C041A7329F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B219D044-7B63-4461-97BD-C041A7329F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
