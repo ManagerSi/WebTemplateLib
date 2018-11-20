@@ -51,6 +51,10 @@ namespace cpts_161_bet.Controllers
                 _userManager = value;
             }
         }
+        public ActionResult LoginNew(string returnUrl) {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
 
         //
         // GET: /Account/Login
