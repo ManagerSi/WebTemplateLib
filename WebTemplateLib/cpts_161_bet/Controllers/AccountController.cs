@@ -51,6 +51,7 @@ namespace cpts_161_bet.Controllers
                 _userManager = value;
             }
         }
+        [AllowAnonymous]
         public ActionResult LoginNew(string returnUrl) {
             ViewBag.ReturnUrl = returnUrl;
             return View();
