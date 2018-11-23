@@ -23,6 +23,48 @@ namespace cpts_161_bet {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //sitecss
+            bundles.Add(new StyleBundle("~/Content/sitecss").Include(
+                      "~/Resource/CSS/style.css"));
+            //sitejs
+            bundles.Add(new ScriptBundle("~/Content/sitejs").Include(
+                    //jquery
+                        "~/Resource/Javascript/jQuery/jquery-1.7.2.min.js",
+                        //flot
+                        "~/Resource/Javascript/Flot/jquery.flot.js",
+                        "~/Resource/Javascript/Flot/jquery.flot.resize.js",
+                        "~/Resource/Javascript/Flot/jquery.flot.pie.js",
+                        //DataTables
+                        "~/Resource/Javascript/DataTables/jquery.dataTables.min.js",
+                        //ColResizable
+                        "~/Resource/Javascript/ColResizable/colResizable-1.3.js",
+                        //jQuryUI
+                        "~/Resource/Javascript/jQueryUI/jquery-ui-1.8.21.min.js",
+                        //Uniform
+                        "~/Resource/Javascript/Uniform/jquery.uniform.js",
+                        //Tipsy
+                        "~/Resource/Javascript/Tipsy/jquery.tipsy.js",
+                        //Elastic
+                        "~/Resource/Javascript/Elastic/jquery.elastic.js",
+                        //ColorPicker
+                        "~/Resource/Javascript/ColorPicker/colorpicker.js",
+                        //SuperTextarea
+                        "~/Resource/Javascript/SuperTextarea/jquery.supertextarea.min.js",
+                        //UISpinner
+                        "~/Resource/Javascript/UISpinner/ui.spinner.js",
+                         //MaskedInput
+                         "~/Resource/Javascript/MaskedInput/jquery.maskedinput-1.3.js",
+                        //ClEditor
+                        "~/Resource/Javascript/ClEditor/jquery.cleditor.js",
+                         //Full Calendar
+                         "~/Resource/Javascript/FullCalendar/fullcalendar.js",
+                        //Color Box
+                        "~/Resource/Javascript/ColorBox/jquery.colorbox.js",
+                         //Kanrisha Script
+                         "~/Resource/Javascript/kanrisha.js"
+                        ));
+            
         }
     }
 }
