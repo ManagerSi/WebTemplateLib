@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cpts_161_bet", "cpts_161_be
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cpts_161_bet.Tests", "cpts_161_bet.Tests\cpts_161_bet.Tests.csproj", "{DAC25F62-5663-47E8-87A9-17DFCF10FB66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseLib", "DataBaseLib\DataBaseLib.csproj", "{7D090E55-94C9-49C5-93D2-7CA038775FE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAC25F62-5663-47E8-87A9-17DFCF10FB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D090E55-94C9-49C5-93D2-7CA038775FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D090E55-94C9-49C5-93D2-7CA038775FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D090E55-94C9-49C5-93D2-7CA038775FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D090E55-94C9-49C5-93D2-7CA038775FE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
