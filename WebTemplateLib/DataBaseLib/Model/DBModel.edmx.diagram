@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="178cb5e87deb44428d08236f2ede5a04" Name="Diagram1">
+        <EntityTypeShape EntityType="ManagerSiModelGen.BASE_CITY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagerSiModelGen.房屋租赁表" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ManagerSiModelGen.House_Lease" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

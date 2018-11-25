@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ManagerSiModelGen.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BASE_CITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" />
+          <Property Name="ORG_LEVEL" Type="varchar" MaxLength="50" />
+          <Property Name="PARENTCODE" Type="varchar" MaxLength="50" />
+          <Property Name="PARENTID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CONTRY" Type="varchar" MaxLength="50" />
+          <Property Name="LOC_X" Type="varchar" MaxLength="50" />
+          <Property Name="LOC_Y" Type="varchar" MaxLength="50" />
+          <Property Name="STATE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="House_Lease">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Districts" Type="nvarchar" MaxLength="20" />
+          <Property Name="Street1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Street2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Community" Type="nvarchar" MaxLength="30" />
+          <Property Name="Room_Num" Type="int" />
+          <Property Name="Parlor_Num" Type="int" />
+          <Property Name="Kitchen_Num" Type="int" />
+          <Property Name="Bathroom_Num" Type="int" />
+          <Property Name="Area" Type="float" />
+          <Property Name="Orientation" Type="nvarchar" MaxLength="10" />
+          <Property Name="Room_Floor" Type="int" />
+          <Property Name="Total_Floor" Type="int" />
+          <Property Name="Renovation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year_Built" Type="int" />
+          <Property Name="House_Type" Type="nvarchar" MaxLength="20" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Lease_Type" Type="nvarchar" MaxLength="5" />
+          <Property Name="Contacts" Type="varchar" MaxLength="20" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="Update_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="Update_Time" Type="datetime" />
+          <Property Name="Biz_date" Type="varchar" MaxLength="20" />
+          <Property Name="State" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="房屋租赁表">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="登记时间" Type="datetime" />
+          <Property Name="市区" Type="nvarchar" MaxLength="20" />
+          <Property Name="街道1" Type="nvarchar" MaxLength="20" />
+          <Property Name="街道2" Type="nvarchar" MaxLength="20" />
+          <Property Name="小区" Type="nvarchar" MaxLength="30" />
+          <Property Name="室" Type="int" />
+          <Property Name="厅" Type="int" />
+          <Property Name="厨" Type="int" />
+          <Property Name="卫" Type="int" />
+          <Property Name="面积" Type="float" />
+          <Property Name="朝向" Type="nvarchar" MaxLength="10" />
+          <Property Name="所在楼层" Type="int" />
+          <Property Name="总楼层" Type="int" />
+          <Property Name="装修" Type="nvarchar" MaxLength="50" />
+          <Property Name="建筑年代" Type="int" />
+          <Property Name="房屋类型" Type="nvarchar" MaxLength="20" />
+          <Property Name="费用" Type="float" />
+          <Property Name="委托类型" Type="nvarchar" MaxLength="5" />
+          <Property Name="联系电话" Type="varchar" MaxLength="20" />
+          <Property Name="联系人" Type="nvarchar" MaxLength="10" />
+          <Property Name="登记人" Type="nvarchar" MaxLength="20" />
+          <Property Name="更新时间" Type="datetime" />
+          <Property Name="State" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityContainer Name="ManagerSiModelGenStoreContainer">
+          <EntitySet Name="BASE_CITY" EntityType="Self.BASE_CITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House_Lease" EntityType="Self.House_Lease" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="房屋租赁表" EntityType="Self.房屋租赁表" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManagerSiModelGen" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BASE_CITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_LEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PARENTCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PARENTID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CONTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LOC_X" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LOC_Y" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ManagerSiContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BASE_CITY" EntityType="Self.BASE_CITY" />
+          <EntitySet Name="房屋租赁表" EntityType="ManagerSiModelGen.房屋租赁表" />
+          <EntitySet Name="House_Lease" EntityType="ManagerSiModelGen.House_Lease" />
+        </EntityContainer>
+        <EntityType Name="房屋租赁表">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="登记时间" Type="DateTime" Precision="3" />
+          <Property Name="市区" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="街道1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="街道2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="小区" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="室" Type="Int32" />
+          <Property Name="厅" Type="Int32" />
+          <Property Name="厨" Type="Int32" />
+          <Property Name="卫" Type="Int32" />
+          <Property Name="面积" Type="Double" />
+          <Property Name="朝向" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="所在楼层" Type="Int32" />
+          <Property Name="总楼层" Type="Int32" />
+          <Property Name="装修" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="建筑年代" Type="Int32" />
+          <Property Name="房屋类型" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="费用" Type="Double" />
+          <Property Name="委托类型" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="联系电话" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="联系人" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="登记人" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="更新时间" Type="DateTime" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="House_Lease">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Districts" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Street1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Street2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Community" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Room_Num" Type="Int32" />
+          <Property Name="Parlor_Num" Type="Int32" />
+          <Property Name="Kitchen_Num" Type="Int32" />
+          <Property Name="Bathroom_Num" Type="Int32" />
+          <Property Name="Area" Type="Double" />
+          <Property Name="Orientation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Room_Floor" Type="Int32" />
+          <Property Name="Total_Floor" Type="Int32" />
+          <Property Name="Renovation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year_Built" Type="Int32" />
+          <Property Name="House_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Lease_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Contacts" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Update_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Update_Time" Type="DateTime" Precision="3" />
+          <Property Name="Biz_date" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManagerSiModelGenStoreContainer" CdmEntityContainer="ManagerSiContext">
+          <EntitySetMapping Name="BASE_CITY">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.BASE_CITY">
+              <MappingFragment StoreEntitySet="BASE_CITY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ORG_LEVEL" ColumnName="ORG_LEVEL" />
+                <ScalarProperty Name="PARENTCODE" ColumnName="PARENTCODE" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="CONTRY" ColumnName="CONTRY" />
+                <ScalarProperty Name="LOC_X" ColumnName="LOC_X" />
+                <ScalarProperty Name="LOC_Y" ColumnName="LOC_Y" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="房屋租赁表">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.房屋租赁表">
+              <MappingFragment StoreEntitySet="房屋租赁表">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="更新时间" ColumnName="更新时间" />
+                <ScalarProperty Name="登记人" ColumnName="登记人" />
+                <ScalarProperty Name="联系人" ColumnName="联系人" />
+                <ScalarProperty Name="联系电话" ColumnName="联系电话" />
+                <ScalarProperty Name="委托类型" ColumnName="委托类型" />
+                <ScalarProperty Name="费用" ColumnName="费用" />
+                <ScalarProperty Name="房屋类型" ColumnName="房屋类型" />
+                <ScalarProperty Name="建筑年代" ColumnName="建筑年代" />
+                <ScalarProperty Name="装修" ColumnName="装修" />
+                <ScalarProperty Name="总楼层" ColumnName="总楼层" />
+                <ScalarProperty Name="所在楼层" ColumnName="所在楼层" />
+                <ScalarProperty Name="朝向" ColumnName="朝向" />
+                <ScalarProperty Name="面积" ColumnName="面积" />
+                <ScalarProperty Name="卫" ColumnName="卫" />
+                <ScalarProperty Name="厨" ColumnName="厨" />
+                <ScalarProperty Name="厅" ColumnName="厅" />
+                <ScalarProperty Name="室" ColumnName="室" />
+                <ScalarProperty Name="小区" ColumnName="小区" />
+                <ScalarProperty Name="街道2" ColumnName="街道2" />
+                <ScalarProperty Name="街道1" ColumnName="街道1" />
+                <ScalarProperty Name="市区" ColumnName="市区" />
+                <ScalarProperty Name="登记时间" ColumnName="登记时间" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House_Lease">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.House_Lease">
+              <MappingFragment StoreEntitySet="House_Lease">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Biz_date" ColumnName="Biz_date" />
+                <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+                <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+                <ScalarProperty Name="Lease_Type" ColumnName="Lease_Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="House_Type" ColumnName="House_Type" />
+                <ScalarProperty Name="Year_Built" ColumnName="Year_Built" />
+                <ScalarProperty Name="Renovation" ColumnName="Renovation" />
+                <ScalarProperty Name="Total_Floor" ColumnName="Total_Floor" />
+                <ScalarProperty Name="Room_Floor" ColumnName="Room_Floor" />
+                <ScalarProperty Name="Orientation" ColumnName="Orientation" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Bathroom_Num" ColumnName="Bathroom_Num" />
+                <ScalarProperty Name="Kitchen_Num" ColumnName="Kitchen_Num" />
+                <ScalarProperty Name="Parlor_Num" ColumnName="Parlor_Num" />
+                <ScalarProperty Name="Room_Num" ColumnName="Room_Num" />
+                <ScalarProperty Name="Community" ColumnName="Community" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" />
+                <ScalarProperty Name="Districts" ColumnName="Districts" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
