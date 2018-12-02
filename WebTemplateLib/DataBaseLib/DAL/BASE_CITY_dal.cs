@@ -9,7 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataBaseLib.DAL {
-    public class BASE_CITY_dal {
+
+    public partial interface IBASE_CITY_dal :
+    DataBaseLib.Infrastructure.DAL.IRepository<BASE_CITY> {
+
+    }
+
+
+    public class BASE_CITY_dal :
+       DataBaseLib.Infrastructure.DAL.GenericRepository<BASE_CITY>,
+       DataBaseLib.DAL.IBASE_CITY_dal {
+
+        private DataBaseLib.Model.ManagerSiContext context { get { return this.UnitOfWork.Context; } }
+        private DataBaseLib.DAL.UnitOfWork UnitOfWork { get; set; }
+        public BASE_CITY_dal(DAL.UnitOfWork unitOfWork) : base (unitOfWork)
+      {
+            this.UnitOfWork = unitOfWork;
+        }
+
+
+
+
         /// <summary>
         /// LINQ Method syntax
         /// </summary>

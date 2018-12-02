@@ -39,10 +39,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,9 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\房屋租赁表BL.cs" />
+    <Compile Include="BLL\BASECITYBL.cs" />
+    <Compile Include="BLL\BLLFactory.cs" />
+    <Compile Include="BLL\BLLTemplate.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DAL\DALTemplate.cs" />
     <Compile Include="DAL\房屋租赁表_dal.cs" />
     <Compile Include="DAL\BASE_CITY_dal.cs" />
+    <Compile Include="Infrastructure\BLL\BLLFactory.cs" />
+    <Compile Include="Infrastructure\BLL\BLLService.cs" />
+    <Compile Include="Infrastructure\BLL\BulkOperator.cs" />
+    <Compile Include="Infrastructure\BLL\GenericBL.cs" />
+    <Compile Include="Infrastructure\BLL\IGenericBL.cs" />
+    <Compile Include="Infrastructure\DAL\GenericRepository.cs" />
+    <Compile Include="Infrastructure\DAL\IRepository.cs" />
+    <Compile Include="Infrastructure\DAL\ScopedTransaction.cs" />
+    <Compile Include="Infrastructure\DAL\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\Factory\InterfaceFactory.cs" />
+    <Compile Include="Infrastructure\HttpModule\DBContextAutoDisposeModule.cs" />
     <Compile Include="Model\BASE_CITY.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -75,10 +95,13 @@
     <Compile Include="Model\House_Lease.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ManagerSiContext.cs" />
     <Compile Include="Model\房屋租赁表.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ClassExtension.cs" />
+    <Compile Include="Utility\Configuration.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
