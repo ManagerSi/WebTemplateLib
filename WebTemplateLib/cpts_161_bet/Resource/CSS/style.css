@@ -2346,25 +2346,25 @@
 	}
 
 	#pattern1 {
-		background: url(../Images/Patterns/pattern1.png) no-repeat 0 0;
+		background: url(~/Resource/Images/Patterns/pattern1.png) no-repeat 0 0;
 	}
 
 	#pattern2 {
-		background: url("../Images/Patterns/pattern2.png") no-repeat 0 0;
+		background: url("~/Resource/Images/Patterns/pattern2.png") no-repeat 0 0;
 	}
 	
 	#pattern3 {
-		background: url("../Images/Patterns/pattern3.png") no-repeat 0 0;
+		background: url("~/Resource/Images/Patterns/pattern3.png") no-repeat 0 0;
 	}
 
 	#pattern4 {
-		background: url("../Images/Patterns/pattern4.png") no-repeat 0 0;
+		background: url("~/Resource/Images/Patterns/pattern4.png") no-repeat 0 0;
 	}
 
 	#pattern5 {
-		background: url("../Images/Patterns/pattern5.png") no-repeat 0 0;
+		background: url("~/Resource/Images/Patterns/pattern5.png") no-repeat 0 0;
 	}
 
 	#pattern6 {
-		background: url("../Images/Patterns/pattern6.png") no-repeat 0 0;
+		background: url("~/Resource/Images/Patterns/pattern6.png") no-repeat 0 0;
 	}

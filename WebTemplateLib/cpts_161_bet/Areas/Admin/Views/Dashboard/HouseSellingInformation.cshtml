@@ -2,7 +2,7 @@
     Layout = "~/Areas/Admin/Views/Dashboard/_Layout.cshtml";
 
 }
-@model List<cpts_161_bet.Areas.Admin.Models.HouseInformation>
+@model cpts_161_bet.Areas.Admin.Models.HouseReportModel
 
 <div class="grid_wrapper">
     <div class="g_6 contents_header">
@@ -47,7 +47,7 @@
             <h4 class="widget_header_title wwIcon i_16_tables">Simple Table</h4>
         </div>
         <div class="widget_contents noPadding">
-            @if (Model.Count > 0) {
+            @if (Model.ItemList.ItemCount > 0) {
                 <table class="tables">
                     <thead>
                         <tr>
@@ -60,7 +60,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model) {
+                        @foreach (var item in Model.ItemList.SubItemList) {
                             <tr>
                                 <td>@item.市区</td>
                                 <td>@item.街道1</td>
@@ -72,6 +72,12 @@
                         }
                     </tbody>
                 </table>
+                <!--  page  start -->
+                    Html.RenderPartial("PaginationBar", Model.ItemList, new ViewDataDictionary { { "UpdateTargetId", "queryResult" } });
+                <!--  page end -->
+                <!--  page  start -->
+                    Html.RenderPartial("dtPaginationBar", Model.ItemList, new ViewDataDictionary { { "UpdateTargetId", "queryResult" } });
+                <!--  page end -->
             } else {
                 <p>暂无数据！</p>
             }

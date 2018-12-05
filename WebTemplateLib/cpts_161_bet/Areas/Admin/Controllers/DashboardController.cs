@@ -1,5 +1,6 @@
 ﻿using cpts_161_bet.Areas.Admin.Models;
-using DataBaseLib.DAL;
+using DataBaseLib.BLL;
+using DataBaseLib.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +9,42 @@ using System.Web.Mvc;
 
 namespace cpts_161_bet.Areas.Admin.Controllers
 {
-    public class DashboardController : Controller
+    public class DashboardController : BaseReportController
     {
         // GET: Admin/Dashboard
-        public ActionResult HouseSellingInformation() {
-            var dal = new 房屋租赁表_dal();
-            var list = dal.GetAllCity().Select(i=>new HouseInformation {
-                市区 = i.市区,
-                街道1 = i.街道1,
-                街道2 = i.街道1,
-                小区 = i.小区,
-                室厅厨卫 = string.Format("{0}/{1}/{2}/{3}", i.室, i.厅, i.厨, i.卫),
-                面积 = i.面积 ?? 0
-            }).ToList();
-            return View(list);
+        public ActionResult HouseSellingInformation(int page=0) {
+            var bll = DataBaseLib.BLL.BLLFactory.Create<I房屋租赁表BL>();
+             var query = bll.QueryAll();
+            
+
+            HouseReportModel viewModel = new HouseReportModel() {
+                ItemList = Pagination(query, page, GetPaginationRouteDict(),
+            item => FillHouseInfo(item)),
+            };
+            return View(viewModel);
         }
+
+        private HouseInformation FillHouseInfo(房屋租赁表 obj, HouseInformation item =null) {
+            if (obj == null) {
+                return new HouseInformation();
+            }
+            item = new HouseInformation {
+                市区 = obj.市区,
+                街道1 = obj.街道1,
+                街道2 = obj.街道2,
+                小区 = obj.小区,
+                室厅厨卫 = string.Format("{0}/{1}/{2}/{3}", obj.室, obj.厅, obj.厨, obj.卫),
+                面积 = obj.面积 ?? 0
+            };
+            return item;
+        }
+
 
         // GET: Admin/Dashboard
         public ActionResult Index()
         {
-            var dal = new 房屋租赁表_dal();
-            var list = dal.GetAllCity();
+            //var dal = new 房屋租赁表_dal();
+            //var list = dal.GetAllCityQueryable();
             return View();
         }
 

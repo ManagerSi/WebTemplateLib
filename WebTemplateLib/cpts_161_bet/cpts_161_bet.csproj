@@ -197,6 +197,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseReportController.cs" />
+    <Compile Include="Areas\Admin\Models\PaginationModel.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -204,6 +206,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ActionLinkExtensions.cs" />
+    <Compile Include="Helper\HtmlPrefixScopeExtensions.cs" />
+    <Compile Include="Helper\JsonDateTimeExtensions.cs" />
+    <Compile Include="Helper\MvcHtmlStringExtensions.cs" />
+    <Compile Include="Helper\StringExtensions.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -466,6 +473,10 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\HouseSellingInformation.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\AjaxDialogClose.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\AjaxPaginationBar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PaginationBar.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\dtPaginationBar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -516,6 +527,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Report\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
