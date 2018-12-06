@@ -25,7 +25,7 @@ $(function () {
 
 	$(".changePattern span").on("click", function(){
 		var id = $(this).attr("id");
-		$("body").css("background-image", "url('../Images/Textures/"+ id +".png')");
+		$("body").css("background-image", "url('../../Resource/Images/Textures/"+ id +".png')");
 	});
 
 /* Opera Fix ========================================= */

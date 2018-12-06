@@ -20,13 +20,16 @@ namespace cpts_161_bet {
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrap-css").Include(
+                      "~/Content/bootstrap.css"));
 
             //sitecss
             bundles.Add(new StyleBundle("~/Content/sitecss").Include(
-                      "~/Resource/CSS/style.css"));
+                      "~/Resource/CSS/style.css",
+                      "~/Resource/CSS/fullcalendar.css",
+                      "~/Resource/CSS/jquery.cleditor.css",
+                      "~/Resource/CSS/jquery.tipsy.css",
+                      "~/Resource/CSS/normalize.css"));
             //sitejs
             bundles.Add(new ScriptBundle("~/Content/sitejs").Include(
                     //jquery

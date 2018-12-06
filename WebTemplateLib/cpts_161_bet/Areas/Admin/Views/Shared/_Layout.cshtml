@@ -12,9 +12,9 @@
     <!-- The Fonts -->
     <!--<link href="http://fonts.useso.com/css?family=Oswald|Droid+Sans:400,700" rel="stylesheet" />-->
     <!-- The Main CSS File -->
-    
-    @Styles.Render("~/bundles/modernizr", "~/Content/sitecss")
-    @Scripts.Render("~/Content/sitejs")
+    @Styles.Render()
+    @Styles.Render("~/bundles/modernizr", "~/Content/bootstrap-css", "~/Content/sitecss")
+    @Scripts.Render("~/Content/sitejs", "~/bundles/bootstrap")
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
@@ -33,7 +33,7 @@
         <div class="wrapper">
             <div class="user">
                 <img src="~/Resource/Images/user_avatar.png" alt="user_avatar" class="user_avatar" />
-                <span class="label">John Alex</span>
+                <span class="mylabel">John Alex</span>
                 <!-- Top Tooltip -->
                 <div class="top_tooltip">
                     <div>
@@ -61,53 +61,53 @@
                     </li>
                     <li class="i_22_settings">
                         <a href="#" title="Settings">
-                            <span class="label">Settings</span>
+                            <span class="mylabel">Settings</span>
                         </a>
                     </li>
                     <li class="i_22_upload">
                         <a href="#" title="Upload">
-                            <span class="label">Upload</span>
+                            <span class="mylabel">Upload</span>
                         </a>
                         <!-- Drop Menu -->
                         <ul class="drop_menu menu_with_icons right_direction">
                             <li>
                                 <a class="i_16_add" href="#" title="New Flie">
-                                    <span class="label">New File</span>
+                                    <span class="mylabel">New File</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="i_16_progress" href="#" title="2 Files Left">
-                                    <span class="label">Files Left</span>
+                                    <span class="mylabel">Files Left</span>
                                     <span class="small_count">2</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="i_16_files" href="#" title="Browse Files">
-                                    <span class="label">Browse Files</span>
+                                    <span class="mylabel">Browse Files</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="i_22_inbox top_inbox">
                         <a href="#" title="Inbox">
-                            <span class="label lasCount">Inbox</span>
+                            <span class="mylabel lasCount">Inbox</span>
                             <span class="small_count">3</span>
                         </a>
                     </li>
                     <li class="i_22_pages">
                         <a href="#" title="Pages">
-                            <span class="label">Pages</span>
+                            <span class="mylabel">Pages</span>
                         </a>
                         <!-- Drop Menu -->
                         <ul class="drop_menu menu_without_icons">
                             <li>
                                 <a title="403 Page" href="403.html">
-                                    <span class="label">403 Forbidden</span>
+                                    <span class="mylabel">403 Forbidden</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="404.html" title="404 Page">
-                                    <span class="label">404 Not Found</span>
+                                    <span class="mylabel">404 Not Found</span>
                                 </a>
                             </li>
                         </ul>
@@ -242,7 +242,7 @@
 
                 <div class="g_6 contents_header">
                     <h3 class="i_16_dashboard tab_label">Dashboard</h3>
-                    <div><span class="label">General Informations and Resume</span></div>
+                    <div><span class="mylabel">General Informations and Resume</span></div>
                 </div>
                 <div class="g_6 contents_options">
                     <div class="simple_buttons">
@@ -255,18 +255,18 @@
                             <ul class="drop_menu menu_with_icons right_direction">
                                 <li>
                                     <a class="i_16_add" href="#" title="New Flie">
-                                        <span class="label">New File</span>
+                                        <span class="mylabel">New File</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="i_16_progress" href="#" title="2 Files Left">
-                                        <span class="label">Files Left</span>
+                                        <span class="mylabel">Files Left</span>
                                         <span class="small_count">2</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="i_16_files" href="#" title="Browse Files">
-                                        <span class="label">Browse Files</span>
+                                        <span class="mylabel">Browse Files</span>
                                     </a>
                                 </li>
                             </ul>
@@ -327,7 +327,7 @@
                             </div>
                             <div class="g_10 g_10M">
                                 <div class="message">
-                                    <span class="label lwParagraph">
+                                    <span class="mylabel lwParagraph">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna dui. Vestibulum adipiscing venenatis elementum.
                                     </span>
                                 </div>
@@ -336,7 +336,7 @@
                         <div class="line_grid">
                             <div class="g_10 g_10M">
                                 <div class="message">
-                                    <span class="label lwParagraph">
+                                    <span class="mylabel lwParagraph">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna dui. Vestibulum adipiscing venenatis elementum.
                                     </span>
                                 </div>
@@ -351,7 +351,7 @@
                             </div>
                             <div class="g_10 g_10M">
                                 <div class="message">
-                                    <span class="label lwParagraph">
+                                    <span class="mylabel lwParagraph">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis urna dui. Vestibulum adipiscing venenatis elementum.
                                     </span>
                                 </div>
@@ -419,18 +419,18 @@
                             <ul class="drop_menu menu_with_icons right_direction">
                                 <li>
                                     <a class="i_16_add" href="#" title="New Flie">
-                                        <span class="label">New File</span>
+                                        <span class="mylabel">New File</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="i_16_progress" href="#" title="2 Files Left">
-                                        <span class="label">Files Left</span>
+                                        <span class="mylabel">Files Left</span>
                                         <span class="small_count">2</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="i_16_files" href="#" title="Browse Files">
-                                        <span class="label">Browse Files</span>
+                                        <span class="mylabel">Browse Files</span>
                                     </a>
                                 </li>
                             </ul>

@@ -109,7 +109,7 @@
 
 	@media screen and (max-width: 767px) {
 		
-		.user > .label {
+		.user > .mylabel {
 			display: none;
 		}
 
@@ -118,7 +118,7 @@
 			width: 22px;
 		}
 
-		.top_links > ul > li > a > .label {
+		.top_links > ul > li > a > .mylabel {
 			display: none;
 		}
 
@@ -615,6 +615,7 @@
 		height: 20px;
 		line-height: 20px;
 		padding-left: 50px;
+        padding-top: 20px;
 	}
 
 /* Contents */
@@ -643,7 +644,7 @@
 		background-position: left center;
 	}
 
-	.contents_header .label {
+	.contents_header .mylabel {
 		padding-left: 24px;
 		margin-top: 12px;
 	}
@@ -795,7 +796,7 @@
 
 /* Typography */
 
-	.label {
+	.mylabel {
 		font-family: Droid Sans;
 		color: #8f8f8f;
 		font-size: 13px;
@@ -1286,7 +1287,8 @@
 
 	.wwIcon {
 		background-position: 0 13px;
-    	padding-left: 25px;
+    	padding-left: 25px;    
+        padding-top: 13px;
 	}
 
 	.wwOptions {
@@ -2346,25 +2348,25 @@
 	}
 
 	#pattern1 {
-		background: url(~/Resource/Images/Patterns/pattern1.png) no-repeat 0 0;
+		background: url(../Images/Patterns/pattern1.png) no-repeat 0 0;
 	}
 
 	#pattern2 {
-		background: url("~/Resource/Images/Patterns/pattern2.png") no-repeat 0 0;
+		background: url("../Images/Patterns/pattern2.png") no-repeat 0 0;
 	}
 	
 	#pattern3 {
-		background: url("~/Resource/Images/Patterns/pattern3.png") no-repeat 0 0;
+		background: url("../Images/Patterns/pattern3.png") no-repeat 0 0;
 	}
 
 	#pattern4 {
-		background: url("~/Resource/Images/Patterns/pattern4.png") no-repeat 0 0;
+		background: url("../Images/Patterns/pattern4.png") no-repeat 0 0;
 	}
 
 	#pattern5 {
-		background: url("~/Resource/Images/Patterns/pattern5.png") no-repeat 0 0;
+		background: url("../Images/Patterns/pattern5.png") no-repeat 0 0;
 	}
 
 	#pattern6 {
-		background: url("~/Resource/Images/Patterns/pattern6.png") no-repeat 0 0;
+		background: url("../Images/Patterns/pattern6.png") no-repeat 0 0;
 	}
