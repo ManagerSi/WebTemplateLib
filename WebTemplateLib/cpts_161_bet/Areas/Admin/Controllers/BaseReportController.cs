@@ -7,12 +7,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Mvc.Filters;
 
 namespace cpts_161_bet.Areas.Admin.Controllers
 {
     public class BaseReportController : Controller
     {
-
+     
         public BaseReportModel<Q> MyPaging<T,Q>(IQueryable<T> source,int CurrentPageIndex, Func<T, Q> selectFunc) {
             var model = new BaseReportModel<Q>();
             model.TotalCount = source.Count();

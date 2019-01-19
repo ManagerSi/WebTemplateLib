@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="ManagerSiModelGen.BASE_CITY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ManagerSiModelGen.房屋租赁表" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="ManagerSiModelGen.House_Lease" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagerSiModelGen.BASE_EMPLOYEE" Width="1.5" PointX="7.75" PointY="1" />
+        <EntityTypeShape EntityType="ManagerSiModelGen.BASE_ROLE" Width="1.5" PointX="10" PointY="4.5" />
+        <EntityTypeShape EntityType="ManagerSiModelGen.BASE_USER" Width="1.5" PointX="10" PointY="1.375" />
+        <AssociationConnector Association="ManagerSiModelGen.FK_BASE_USER_BASE_EMPLOYEE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

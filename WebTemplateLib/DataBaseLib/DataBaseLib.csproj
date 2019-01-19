@@ -47,6 +47,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,11 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BASE_USERBL.cs" />
     <Compile Include="BLL\房屋租赁表BL.cs" />
     <Compile Include="BLL\BASECITYBL.cs" />
     <Compile Include="BLL\BLLFactory.cs" />
     <Compile Include="BLL\BLLTemplate.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="DAL\BASE_USER_dal.cs" />
     <Compile Include="DAL\DALTemplate.cs" />
     <Compile Include="DAL\房屋租赁表_dal.cs" />
     <Compile Include="DAL\BASE_CITY_dal.cs" />
@@ -75,6 +77,15 @@
     <Compile Include="Infrastructure\Factory\InterfaceFactory.cs" />
     <Compile Include="Infrastructure\HttpModule\DBContextAutoDisposeModule.cs" />
     <Compile Include="Model\BASE_CITY.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BASE_EMPLOYEE.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BASE_ROLE.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BASE_USER.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DBModel.Context.cs">

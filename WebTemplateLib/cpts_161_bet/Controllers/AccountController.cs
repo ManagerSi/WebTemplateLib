@@ -9,12 +9,45 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using cpts_161_bet.Models;
+using cpts_161_bet.Security;
+using DataBaseLib.BLL;
 
 namespace cpts_161_bet.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        [AllowAnonymous]
+        public ActionResult MyLogin() {
+            BLSessionPersisiter session = new BLSessionPersisiter();
+            session.UserID = 1;
+            return View("MyLogin");
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult MyLogin(LoginViewModel model, string returnUrl) {
+            if (!ModelState.IsValid) {
+                return View(model);
+            }
+            var bll = BLLFactory.Create<I房屋租赁表BL>();
+            var query = bll.QueryAll();
+            var user = BLLFactory.Create<IBASE_USERBL>().GetByAccount(model.name, model.Password);
+            if (user != null) {
+                BLSessionPersisiter session = new BLSessionPersisiter();
+                session.UserID = user.Emp_ID.Value;
+                session.UserName = user.UserAccount;
+                
+                return RedirectToLocal(returnUrl);
+            } else {
+                ModelState.AddModelError("", "无效的登录尝试。");
+                return View(model);
+            }
+          
+        }
+
+
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -77,7 +110,7 @@ namespace cpts_161_bet.Controllers
             {
                 return View(model);
             }
-
+          
             // 这不会计入到为执行帐户锁定而统计的登录失败次数中
             // 若要在多次输入错误密码的情况下触发帐户锁定，请更改为 shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);

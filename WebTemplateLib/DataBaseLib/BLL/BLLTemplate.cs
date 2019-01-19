@@ -33,6 +33,7 @@ namespace DataBaseLib.BLL
                 //在这里进行注册
                 RegisterBL("IBASECITYBL", typeof(IBASECITYBL), typeof(BASECITYBL));
                 RegisterBL("I房屋租赁表BL", typeof(I房屋租赁表BL), typeof(房屋租赁表BL));
+                RegisterBL("IBASE_USERBL", typeof(IBASE_USERBL), typeof(BASE_USERBL));
                 
                 ExtraInit(); 
             }

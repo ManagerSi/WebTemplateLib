@@ -373,7 +373,8 @@ $(function () {
 		$(this).ColorPickerSetColor(this.value);
 	});	
 
-	$( ".pick_date" ).datepicker();
+	$(".pick_date").datepicker();
+	$(".pick_date").datepicker().formate("option", "dateFormat", "yy-mm-dd");
 
 /* Masked Input & AutoComplet ======================== */
 

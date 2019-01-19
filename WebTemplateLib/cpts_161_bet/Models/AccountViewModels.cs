@@ -49,6 +49,9 @@ namespace cpts_161_bet.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "用户名")]
+        public string name { get; set; }
+       
         [Display(Name = "电子邮件")]
         [EmailAddress]
         public string Email { get; set; }

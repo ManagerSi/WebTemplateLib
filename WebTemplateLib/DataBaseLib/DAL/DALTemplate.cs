@@ -60,7 +60,6 @@ namespace DataBaseLib.DAL
     	  return _BaseCityRepository;
     	}
       }
-
         /// <summary>
         /// 注册
         /// </summary>
@@ -73,6 +72,20 @@ namespace DataBaseLib.DAL
                 return _房屋租赁表Repository;
             }
         }
+        
+        /// <summary>
+        /// 注册
+        /// </summary>
+        private BASE_USER_dal _BASE_USERRepository = null;
+        public BASE_USER_dal BASE_USERRepository {
+            get {
+                if (_BASE_USERRepository == null) {
+                    _BASE_USERRepository = new BASE_USER_dal(this);
+                }
+                return _BASE_USERRepository;
+            }
+        }
+
 
 
     }

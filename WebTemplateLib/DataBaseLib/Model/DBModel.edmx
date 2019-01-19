@@ -20,6 +20,47 @@
           <Property Name="LOC_Y" Type="varchar" MaxLength="50" />
           <Property Name="STATE" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="BASE_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpType" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="State" Type="char" MaxLength="1" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateID" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="BASE_ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATA_AUTH_ID" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="ROLE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="ALLOW_DEL" Type="varchar" MaxLength="1" />
+          <Property Name="DEFAULT_ROLE" Type="varchar" MaxLength="1" />
+          <Property Name="REMARK" Type="varchar" MaxLength="500" />
+          <Property Name="STATE" Type="varchar" MaxLength="2" />
+          <Property Name="SORT" Type="numeric" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="BASE_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserAccount" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UserPWD" Type="nvarchar" MaxLength="20" />
+          <Property Name="State" Type="char" MaxLength="1" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateID" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Emp_ID" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
         <EntityType Name="House_Lease">
           <Key>
             <PropertyRef Name="ID" />
@@ -78,10 +119,29 @@
           <Property Name="更新时间" Type="datetime" />
           <Property Name="State" Type="char" MaxLength="2" />
         </EntityType>
+        <Association Name="FK_BASE_USER_BASE_EMPLOYEE">
+          <End Role="BASE_EMPLOYEE" Type="Self.BASE_EMPLOYEE" Multiplicity="0..1" />
+          <End Role="BASE_USER" Type="Self.BASE_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BASE_EMPLOYEE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BASE_USER">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ManagerSiModelGenStoreContainer">
           <EntitySet Name="BASE_CITY" EntityType="Self.BASE_CITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BASE_EMPLOYEE" EntityType="Self.BASE_EMPLOYEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BASE_ROLE" EntityType="Self.BASE_ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BASE_USER" EntityType="Self.BASE_USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="House_Lease" EntityType="Self.House_Lease" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="房屋租赁表" EntityType="Self.房屋租赁表" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BASE_USER_BASE_EMPLOYEE" Association="Self.FK_BASE_USER_BASE_EMPLOYEE">
+            <End Role="BASE_EMPLOYEE" EntitySet="BASE_EMPLOYEE" />
+            <End Role="BASE_USER" EntitySet="BASE_USER" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -106,6 +166,13 @@
           <EntitySet Name="BASE_CITY" EntityType="Self.BASE_CITY" />
           <EntitySet Name="房屋租赁表" EntityType="ManagerSiModelGen.房屋租赁表" />
           <EntitySet Name="House_Lease" EntityType="ManagerSiModelGen.House_Lease" />
+          <EntitySet Name="BASE_EMPLOYEE" EntityType="ManagerSiModelGen.BASE_EMPLOYEE" />
+          <EntitySet Name="BASE_ROLE" EntityType="ManagerSiModelGen.BASE_ROLE" />
+          <EntitySet Name="BASE_USER" EntityType="ManagerSiModelGen.BASE_USER" />
+          <AssociationSet Name="FK_BASE_USER_BASE_EMPLOYEE" Association="ManagerSiModelGen.FK_BASE_USER_BASE_EMPLOYEE">
+            <End Role="BASE_EMPLOYEE" EntitySet="BASE_EMPLOYEE" />
+            <End Role="BASE_USER" EntitySet="BASE_USER" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="房屋租赁表">
           <Key>
@@ -165,6 +232,61 @@
           <Property Name="Biz_date" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="BASE_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpType" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="State" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateID" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="BASE_USER" Relationship="ManagerSiModelGen.FK_BASE_USER_BASE_EMPLOYEE" FromRole="BASE_EMPLOYEE" ToRole="BASE_USER" />
+        </EntityType>
+        <EntityType Name="BASE_ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Decimal" Nullable="false" Precision="10" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATA_AUTH_ID" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="ROLE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ALLOW_DEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DEFAULT_ROLE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="STATE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SORT" Type="Decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="BASE_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserAccount" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UserPWD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Emp_ID" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="BASE_EMPLOYEE" Relationship="ManagerSiModelGen.FK_BASE_USER_BASE_EMPLOYEE" FromRole="BASE_USER" ToRole="BASE_EMPLOYEE" />
+        </EntityType>
+        <Association Name="FK_BASE_USER_BASE_EMPLOYEE">
+          <End Type="ManagerSiModelGen.BASE_EMPLOYEE" Role="BASE_EMPLOYEE" Multiplicity="0..1" />
+          <End Type="ManagerSiModelGen.BASE_USER" Role="BASE_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BASE_EMPLOYEE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BASE_USER">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -243,6 +365,50 @@
                 <ScalarProperty Name="Street2" ColumnName="Street2" />
                 <ScalarProperty Name="Street1" ColumnName="Street1" />
                 <ScalarProperty Name="Districts" ColumnName="Districts" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BASE_EMPLOYEE">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.BASE_EMPLOYEE">
+              <MappingFragment StoreEntitySet="BASE_EMPLOYEE">
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BASE_ROLE">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.BASE_ROLE">
+              <MappingFragment StoreEntitySet="BASE_ROLE">
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="DEFAULT_ROLE" ColumnName="DEFAULT_ROLE" />
+                <ScalarProperty Name="ALLOW_DEL" ColumnName="ALLOW_DEL" />
+                <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+                <ScalarProperty Name="DATA_AUTH_ID" ColumnName="DATA_AUTH_ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BASE_USER">
+            <EntityTypeMapping TypeName="ManagerSiModelGen.BASE_USER">
+              <MappingFragment StoreEntitySet="BASE_USER">
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="UserPWD" ColumnName="UserPWD" />
+                <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

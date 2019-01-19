@@ -28,5 +28,8 @@ namespace DataBaseLib.Model
         public virtual DbSet<BASE_CITY> BASE_CITY { get; set; }
         public virtual DbSet<房屋租赁表> 房屋租赁表 { get; set; }
         public virtual DbSet<House_Lease> House_Lease { get; set; }
+        public virtual DbSet<BASE_EMPLOYEE> BASE_EMPLOYEE { get; set; }
+        public virtual DbSet<BASE_ROLE> BASE_ROLE { get; set; }
+        public virtual DbSet<BASE_USER> BASE_USER { get; set; }
     }
 }
