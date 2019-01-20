@@ -11,16 +11,18 @@ using Microsoft.Owin.Security;
 using cpts_161_bet.Models;
 using cpts_161_bet.Security;
 using DataBaseLib.BLL;
+using cpts_161_bet.Security.Attribute;
+using log4net;
 
 namespace cpts_161_bet.Controllers
 {
-    [Authorize]
-    public class AccountController : Controller
-    {
+    [MyAuth]
+    public class AccountController : Controller {
+        private static readonly ILog log = LogManager.GetLogger(typeof(AccountController));
         [AllowAnonymous]
         public ActionResult MyLogin() {
-            BLSessionPersisiter session = new BLSessionPersisiter();
-            session.UserID = 1;
+            //BLSessionPersisiter session = new BLSessionPersisiter();
+            //session.UserID = 1;
             return View("MyLogin");
         }
         [HttpPost]
