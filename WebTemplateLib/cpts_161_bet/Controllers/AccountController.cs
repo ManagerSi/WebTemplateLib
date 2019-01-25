@@ -16,13 +16,16 @@ using log4net;
 
 namespace cpts_161_bet.Controllers
 {
-    [MyAuth]
+    [MP_OAuth]
+    [Authorize]
     public class AccountController : Controller {
         private static readonly ILog log = LogManager.GetLogger(typeof(AccountController));
         [AllowAnonymous]
+        [MP_OAuth]
         public ActionResult MyLogin() {
             //BLSessionPersisiter session = new BLSessionPersisiter();
             //session.UserID = 1;
+            log.Info("MyLogin");
             return View("MyLogin");
         }
         [HttpPost]

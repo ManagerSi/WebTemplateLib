@@ -15,6 +15,7 @@ namespace cpts_161_bet.Security.Attribute {
         public static IList<string> wechatAgnet = new[] { "MicroMessenger", "Windows Phone" };
 
         public static bool IsWeChat(HttpRequestBase request) {
+            log.Info(request.UserAgent);
             return IsWeChat(request.UserAgent);
         }
 
@@ -22,6 +23,7 @@ namespace cpts_161_bet.Security.Attribute {
             return !string.IsNullOrEmpty(userAgent) && wechatAgnet.Any(userAgent.Contains);
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext context) {
+            log.Info("HandleUnauthorizedRequest");
             if (context == null) {
                 throw new ArgumentNullException("filterContext");
             }
@@ -34,11 +36,13 @@ namespace cpts_161_bet.Security.Attribute {
             //}
             //context.Result = new RedirectResult("/");
 
-            if (!IsWeChat(context.RequestContext.HttpContext.Request)) {//非微信
+            if (false && !IsWeChat(context.RequestContext.HttpContext.Request)) {//非微信
+                log.Info("非微信,跳转到登录页面");
                 context.Result = new RedirectResult("/Account/MyLogin");
+
             }else {
-                string CorpID = ConfigurationManager.AppSettings[""];
-                string Host = ConfigurationManager.AppSettings[""];
+                string CorpID = ConfigurationManager.AppSettings["WeChatCorpId"];
+                string Secret = ConfigurationManager.AppSettings["WeChatCorpSecret"];
                 string Flag_MockUserId = null;// ConfigurationManager.AppSettings[BaseDictType.CRMTest];
                 if (!string.IsNullOrEmpty(Flag_MockUserId)) {
                     //AuthorizationService.SetAuthSession(int.Parse(Flag_MockUserId));
@@ -67,10 +71,12 @@ namespace cpts_161_bet.Security.Attribute {
                 //    filterContext.Result = Redirect(Request.Url.ToString());
                 //    return true;
                 //}
-                string returnUrl = "http://114.80.0.90/Account/MyLogin";
+                log.Info("微信验证");
+                string returnUrl = "http://www.managersi.top/Home/Index";
                 var url = OAuthApi.GetAuthorizeUrl(CorpID,
-                "http://sdk.weixin.senparc.com/oauth2/BaseCallback?returnUrl=" + returnUrl,
+                "http://www.managersi.top/OAuthCallback/Index?returnUrl=" + returnUrl,
                 Session.SessionID, OAuthScope.snsapi_base);
+                log.Info(url);
                 context.Result = new RedirectResult(url);
             }
         }

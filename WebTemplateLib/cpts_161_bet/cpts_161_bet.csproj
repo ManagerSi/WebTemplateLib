@@ -230,6 +230,8 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OAuthCallbackController.cs" />
+    <Compile Include="Security\Attribute\IPInterceptionAuthorizeAttribute.cs" />
     <Compile Include="Security\Attribute\MP_OAuth.cs" />
     <Compile Include="Security\Attribute\MyAuth.cs" />
     <Compile Include="Global.asax.cs">
@@ -514,6 +516,7 @@
     <Content Include="Areas\Admin\Views\Shared\AjaxPaginationBar.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\PaginationBar.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\dtPaginationBar.cshtml" />
+    <None Include="Properties\PublishProfiles\WebLib.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
